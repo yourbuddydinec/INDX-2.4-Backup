@@ -1,0 +1,47 @@
+################################
+########### BED_FANS ###########
+################################
+[gcode_macro BED_FANS_SPEED]
+gcode:
+    {% set globals = printer['gcode_macro _GLOBALS'] %} ; get global variables
+    {% set FAN_L_NAME = globals.bed_fan_name_l %}
+    {% set FAN_R_NAME = globals.bed_fan_name_r %}
+    {% set FAN_SPEED = params.SPEED|default(100)|int %}
+ 
+    SET_FAN_SPEED FAN={FAN_L_NAME} SPEED={FAN_SPEED}
+    SET_FAN_SPEED FAN={FAN_R_NAME} SPEED={FAN_SPEED}
+
+[gcode_macro BED_FANS_OFF]
+gcode:
+    {% set globals = printer['gcode_macro _GLOBALS'] %} ; get global variables
+    {% set FAN_L_NAME = globals.bed_fan_name_l %}
+    {% set FAN_R_NAME = globals.bed_fan_name_r %}
+    {% set ACTUAL_FAN_SPEED = 0 %}
+    
+    M118 Bed fans off
+    SET_FAN_SPEED FAN={FAN_L_NAME} SPEED={ACTUAL_FAN_SPEED}
+    SET_FAN_SPEED FAN={FAN_R_NAME} SPEED={ACTUAL_FAN_SPEED}
+
+[gcode_macro BED_FANS_SLOW]
+gcode:
+    {% set globals = printer['gcode_macro _GLOBALS'] %} ; get global variables
+    {% set FAN_L_NAME = globals.bed_fan_name_l %}
+    {% set FAN_R_NAME = globals.bed_fan_name_r %}
+    {% set FAN_SPEED = globals.bed_fan_slow_spd %}
+    {% set ACTUAL_FAN_SPEED = FAN_SPEED/100 %}
+    
+    M118 Bed fans on to {FAN_SPEED}% ({ACTUAL_FAN_SPEED})
+    SET_FAN_SPEED FAN={FAN_L_NAME} SPEED={ACTUAL_FAN_SPEED}
+    SET_FAN_SPEED FAN={FAN_R_NAME} SPEED={ACTUAL_FAN_SPEED}
+
+[gcode_macro BED_FANS_FAST]
+gcode:
+    {% set globals = printer['gcode_macro _GLOBALS'] %} ; get global variables
+    {% set FAN_L_NAME = globals.bed_fan_name_l %}
+    {% set FAN_R_NAME = globals.bed_fan_name_r %}
+    {% set FAN_SPEED = globals.bed_fan_fast_spd %}
+    {% set ACTUAL_FAN_SPEED = FAN_SPEED/100 %}
+    
+    M118 Bed fans on to {FAN_SPEED}% ({ACTUAL_FAN_SPEED})
+    SET_FAN_SPEED FAN={FAN_L_NAME} SPEED={ACTUAL_FAN_SPEED}
+    SET_FAN_SPEED FAN={FAN_R_NAME} SPEED={ACTUAL_FAN_SPEED}

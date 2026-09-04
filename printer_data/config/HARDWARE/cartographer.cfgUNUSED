@@ -30,3 +30,9 @@ register_as_probe: false 		# To allow tap with indx
 #   M118 CARTOGRAPHER X OFFSET IS {X_OFFSET}
 #   M118 CARTOGRAPHER Y OFFSET IS {Y_OFFSET}
 
+
+[temperature_sensor cartographer]
+sensor_type: temperature_mcu
+sensor_mcu: cartographer
+min_temp: 5
+max_temp: 105

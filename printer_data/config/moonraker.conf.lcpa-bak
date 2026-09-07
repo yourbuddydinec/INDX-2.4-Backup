@@ -112,12 +112,3 @@ origin: https://github.com/nic335/Axiscope.git
 primary_branch: main
 is_system_service: True
 managed_services: axiscope
-
-# >>> lcpa >>> (managed by lcpa install.sh - do not edit)
-[update_manager lcpa]
-type: git_repo
-path: /home/dinec/lcpa
-origin: https://github.com/charliemayall/klipper-load-cell-pa.git
-primary_branch: main
-managed_services: klipper
-# <<< lcpa <<<

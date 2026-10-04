@@ -1,0 +1,38 @@
+[mcu cartographer] 
+serial: /dev/serial/by-id/usb-Cartographer_stm32g431xx_5E0044000C50315447313620-if00
+restart_method: command      	# Not needed for probes using CAN. 
+
+[cartographer]
+mcu: cartographer
+x_offset: 0
+y_offset: 26
+verbose: yes      				# For extra output
+register_as_probe: false 		# To allow tap with indx
+
+# [cartographer touch]
+# samples: 5
+# max_samples: 20
+
+# [adxl345]
+# cs_pin: cartographer:PA0
+# spi_bus: spi1
+
+# [resonance_tester]
+# accel_chip: adxl345
+# probe_points:
+#     175, 175, 20 # Fill out the blank with x and y coordinates where you want to run the resonance test.
+
+# [gcode_macro CHECK_CARTOGRAPHER_OFFSET]
+# gcode:
+#   {% set X_OFFSET = printer.configfile.config["cartographer"]["x_offset"] %}
+#   {% set Y_OFFSET = printer.configfile.config["cartographer"]["y_offset"] %}
+
+#   M118 CARTOGRAPHER X OFFSET IS {X_OFFSET}
+#   M118 CARTOGRAPHER Y OFFSET IS {Y_OFFSET}
+
+
+[temperature_sensor cartographer]
+sensor_type: temperature_mcu
+sensor_mcu: cartographer
+min_temp: 5
+max_temp: 105

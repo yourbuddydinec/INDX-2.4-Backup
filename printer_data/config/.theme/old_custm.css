@@ -1,0 +1,378 @@
+:root {
+  /* Core palette */
+  --panels: rgba(51, 53, 71, 0.48);
+
+  --color1: #621a1a;
+  --color2: #e100ff;
+  --color3: rgba(225, 0, 255, 0);
+  --color4: #4a1e52;
+  --color5: var(--panels);
+  --color6: var(--panels);
+  --color7: var(--panels);
+  --color8: var(--panels);
+  --color9: #cd21e9;
+  --color10: #483548;
+  --color11: #571d63;
+  --color12: rgba(69, 72, 92, 0.6);
+  --color13: #6a2171;
+  --color14: #71267f;
+  --color15: #b06e6e;
+  --color16: #7a1e1e;
+  --color17: #970c0c;
+  --color18: #6f1515;
+  --color19: #9ce59d;
+
+  --emergency-button: #6f1515;
+  --home-buttons: rgba(255, 0, 71, 0.59);
+
+  /* Text colors */
+  --text-color: #ffdae6;
+  --text-color-strong: #ff0047;
+
+  /* Accent / primary (Vuetify) */
+  --color-1: rgb(192, 27, 213);
+  --color-2: rgba(13, 18, 20, 0.61);
+  --color-3: rgba(13, 76, 113, 0);
+  --color-4: #132c3c;
+  --color-5: rgba(0, 161, 255, 0.07);
+  --v-primary-base: #ff0047;
+
+  overflow-x: hidden;
+}
+
+/* Font */
+/* @font-face {
+  font-family: 'Rootiest';
+  src: url('https://rawcdn.githack.com/rootiest/rootiest-iosevka/1d455b5bf2402fe994736b913948f35f30935424/NerdFont/IosevkaRootiestV2NerdFont-Regular.ttf')
+       format('truetype');
+  font-style: normal;
+  font-weight: 400;
+}
+*/
+
+@font-face {
+  font-family: 'Rootiest';
+  src: url('https://rawcdn.githack.com/yourbuddydinec/Mainsail-Themes/4ded6bccee6dfd638a9ef20589bf0503d31c5dd1/Fonts/BigNoodleTooOblique.ttf')
+       format('truetype');
+  font-style: normal;
+  font-weight: 400;
+}
+
+
+/* Apply custom font sensibly (no global * selector) */
+body,
+.v-application,
+.v-application * {
+  font-family: 'Rootiest', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+font-size: 1.2rem;
+}
+
+.container {
+  max-width: 100% !important;
+}
+
+/* Background gradient: smooth but cheap-ish */
+body {
+  margin: 0;
+  background:
+    linear-gradient(
+      45deg,
+      var(--color-1) 0%,
+      var(--color-2) 30%,
+      var(--color-3) 66%,
+      var(--color-4) 100%
+    );
+  background-size: 200% 200%;
+  background-attachment: fixed;
+  color: var(--text-color);
+}
+
+/* Gentle animated background only if user allows motion */
+@media (prefers-reduced-motion: no-preference) {
+  body {
+    animation: RootiestGradient 60s ease-in-out infinite;
+  }
+}
+
+/* Soft blobs, optimized */
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  width: 35vmax;
+  height: 35vmax;
+  background: var(--color-5);
+  border-radius: 50%;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.9;
+  transform-origin: 50% 50%;
+}
+
+/* Only spin (transform only = GPU-friendly; slower = cheaper) */
+@media (prefers-reduced-motion: no-preference) {
+  body::before {
+    left: -8vmin;
+    top: -8vmin;
+    animation: RootiestBlobSpin1 80s linear infinite;
+  }
+
+  body::after {
+    right: -10vmin;
+    bottom: -10vmin;
+    animation: RootiestBlobSpin2 120s linear infinite;
+  }
+}
+
+/* Core keyframes */
+@keyframes RootiestGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+@keyframes RootiestBlobSpin1 {
+  0% { transform: translate3d(0, 0, 0) rotate(0deg); }
+  100% { transform: translate3d(0, 0, 0) rotate(360deg); }
+}
+@keyframes RootiestBlobSpin2 {
+  0% { transform: translate3d(0, 0, 0) rotate(0deg) scale(1); }
+  100% { transform: translate3d(0, 0, 0) rotate(-360deg) scale(1.05); }
+}
+
+/* SVG / misc */
+.st0 { display: none; }
+.st1 { display: inline; }
+.st2 { opacity: 0.29; }
+.st3 { fill: var(--color1); }
+.st4 { clip-path: url(#SVGID_2_); fill: var(--color2); }
+.st9 { fill: none; }
+
+/* --- Mainsail / Vuetify theming --- */
+
+/* Error buttons outlined style */
+.v-btn.error {
+  background-color: transparent !important;
+  border: none !important;
+  color: var(--v-error-base) !important;
+}
+.v-btn.error .v-icon__svg {
+  fill: var(--v-error-base) !important;
+}
+
+/* Table hover state */
+.theme--dark.v-data-table > .v-data-table__wrapper > table > tbody > tr:hover:not(.v-data-table__expanded__content):not(.v-data-table__empty-wrapper) {
+  background: var(--color4);
+}
+
+/* Glassy base surfaces (lightweight version) */
+.theme--dark.v-sheet {
+  background-color: var(--color5);
+  color: var(--text-color);
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* App background */
+.theme--dark.v-application,
+.theme--dark.v-navigation-drawer,
+.v-navigation-drawer__image > .v-image > .v-image__image.v-image__image--cover {
+  background: transparent;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Drawer border */
+.v-navigation-drawer__border {
+  width: 0;
+}
+
+/* Top bar */
+.theme--dark.v-app-bar.v-toolbar.v-sheet {
+  background-color: var(--color6);
+}
+
+/* Navigation drawer + color picker */
+.theme--dark.v-navigation-drawer,
+.v-color-picker__controls {
+  background: var(--color7);
+}
+
+/* Mainsail panels */
+.v-application .panel {
+  background-color: var(--color8);
+  border: none;
+  box-shadow: none !important;
+}
+
+/* Transparent internals for nested elements */
+.v-application .panel .theme--dark.v-toolbar.v-sheet,
+.theme--dark.v-data-table,
+.theme--dark.v-tabs > .v-tabs-bar,
+.theme--dark.v-tabs-items,
+.v-sheet.v-list,
+.settings-tabs .theme--dark.v-sheet,
+.filesJobqueue.theme--dark.v-sheet,
+.filesGcodeCard.theme--dark.v-sheet,
+.cm-gutters,
+.cm-editor {
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  color: var(--text-color);
+}
+
+/* Inputs */
+.v-input__slot {
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  color: var(--text-color);
+}
+
+/* Borders & dividers removal */
+.theme--dark.v-data-table > .v-data-table__wrapper > table > tbody > tr:not(:last-child) > td:not(.v-data-table__mobile-row),
+.theme--dark.v-data-table > .v-data-table__wrapper > table > thead > tr:last-child > th,
+.theme--dark.v-divider,
+.consoleTableRow.default + .consoleTableRow .col,
+.theme--dark.v-data-table .v-data-footer,
+.consoleTable[data-v-3946c1f9],
+.echarts-tooltip .py-1,
+.v-btn--outlined {
+  border: none !important;
+}
+
+/* CodeMirror gutter */
+.cm-gutter {
+  background-color: var(--color9) !important;
+}
+
+/* ECharts tooltip */
+.echarts-tooltip {
+  background-color: var(--color10) !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Menus */
+.v-menu__content {
+  border-radius: 15px;
+  background-color: var(--color11) !important;
+}
+
+/* Circular progress */
+.v-progress-circular__underlay {
+  stroke: var(--color12) !important;
+}
+
+/* Buttons */
+.v-btn {
+  border-radius: 8px;
+
+}
+
+/* Webcam wrapper */
+.webcamImage {
+  padding: 10px 0;
+  background-color: transparent !important;
+  overflow: hidden;
+}
+
+/* FPS badge */
+.webcamFpsOutput {
+  bottom: 6px !important;
+  right: 6px !important;
+  background-color: var(--color13) !important;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+/* Dialogs / tooltips / cards */
+.v-dialog,
+.v-sheet.v-card,
+.v-tooltip__content.menuable__content__active {
+  border: none;
+  border-radius: 15px !important;
+}
+.v-dialog--fullscreen .v-sheet.v-card {
+  border-radius: 0 !important;
+
+}
+
+/* Chart text */
+x-vue-echarts text {
+  fill-opacity: 0.85 !important;
+  stroke: none !important;
+  fill: var(--text-color) !important;
+}
+
+/* Icon rotate speed tweak */
+.icon-rotate {
+  animation-duration: 1.75s !important;
+}
+
+/* General text colour fixes for key areas */
+.order-1 > .row > .col,
+.pa-0.v-card__text > .row > .col,
+.theme--dark.v-application .text--primary,
+.v-list-item__title,
+.text-no-wrap,
+.v-text-field .v-label,
+.pb-3 span,
+.row.px-3 .col,
+.v-btn__content,
+.v-application .body-2,
+.v-data-table > .v-data-table__wrapper > table > tbody > tr > td,
+.v-toolbar__title {
+  color: var(--text-color) !important;
+font-size: 1.5rem;
+}
+
+/* Toolbar title with subtle glow */
+.v-toolbar__title {
+  text-shadow:
+    1px 1px 0px var(--color1),
+    0 0 4px #000,
+    0 0 2px #000;
+  font-size: 1.75rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 2.75rem;
+
+}
+
+/* Emergency & home buttons */
+.emergency-button {
+  background: var(--emergency-button) !important;
+}
+.col-6 .w-100,
+.w-100.btnMinWidthAuto,
+.v-btn--tile.flex-grow-1 {
+  background: var(--home-buttons) !important;
+}
+
+/* Warnings / success icon tint */
+.warning--text path {
+  color: var(--color19) !important;
+}
+
+/* Code editor area (so it’s readable, not see-through) */
+.cm-editor {
+  background-color: rgba(3, 5, 9, 0.98) !important;
+}
+
+/* Gutter next to line numbers */
+.cm-gutters {
+  background-color: rgba(8, 10, 16, 0.98) !important;
+}
+
+/* Main dialogs (e.g. edit G-code, settings) */
+.v-dialog .v-card,
+.v-dialog .v-sheet.v-card {
+  background-color: rgba(5, 7, 10, 0.97) !important;
+  backdrop-filter: blur(10px);
+}
+
+.v-list-item__title.menu-item-title {
+  font-size: 1.5rem !important;
+}

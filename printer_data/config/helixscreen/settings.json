@@ -96,6 +96,7 @@
           "leds": [
             "neopixel rainbowstick_top",
             "neopixel rainbowstick_bottom",
+            "neopixel hotkey_leds",
             "neopixel indx"
           ],
           "sensors": [
@@ -110,7 +111,7 @@
             "tmc2240 stepper_z3",
             "tmc2240 extruder"
           ],
-          "timestamp": "2026-11-11T01:33:01Z"
+          "timestamp": "2026-11-11T01:35:33Z"
         },
         "optional": []
       },

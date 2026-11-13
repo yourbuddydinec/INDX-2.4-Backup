@@ -1,5 +1,8 @@
 {
   "active_printer_id": "default",
+  "appearance": {
+    "show_widget_labels": true
+  },
   "config_version": 23,
   "dark_mode": true,
   "display": {

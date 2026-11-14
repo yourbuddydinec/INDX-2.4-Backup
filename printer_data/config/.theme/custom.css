@@ -832,4 +832,5 @@ x-vue-echarts text{
 /* Folders (detected by the folder icon) */
 .v-data-table tr.file-list-cursor:has(td:nth-child(2) path[d^="M10,4H4"]) > td:nth-child(3) {
   color: var(--file-folder) !important;
+  font-weight: 700 !important;
 }

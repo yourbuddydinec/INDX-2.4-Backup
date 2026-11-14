@@ -43,6 +43,10 @@
   --v-primary-base: #ff0047; /* some text and icons and buttons */
   overflow-x: hidden;
 
+
+  --editor-bg: rgba(18, 14, 26, 0.97);   /* raise/lower the last number for opacity */
+  --editor-gutter-bg: #2a1233;
+  --editor-toolbar-bg: rgba(30, 22, 42, 1);
 }
 
 
@@ -752,4 +756,41 @@ x-vue-echarts text{
 
 .warning--text path {
     color: var(--color19) !important;       
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.v-dialog--fullscreen > .v-card.editor-dialog,
+.v-dialog--fullscreen > .v-card.editor-dialog .v-card__text {
+  background-color: var(--editor-bg) !important;
+  backdrop-filter: none !important;
+}
+
+.editor-dialog .cm-editor,
+.editor-dialog .cm-scroller {
+  background-color: var(--editor-bg) !important;
+}
+
+.editor-dialog .cm-gutters {
+  background-color: var(--editor-gutter-bg) !important;
+  border: none !important;
+}
+
+.editor-dialog .cm-gutter {
+  background-color: transparent !important;  /* gutters wrapper handles color */
+}
+
+.editor-dialog header.panel-toolbar {
+  background-color: var(--editor-toolbar-bg) !important;
+  backdrop-filter: none !important;
 }

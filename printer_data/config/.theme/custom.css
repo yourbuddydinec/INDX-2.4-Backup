@@ -46,7 +46,8 @@
 
   --editor-bg: rgba(18, 14, 26, 0.60);   /* raise/lower the last number for opacity */
   --editor-gutter-bg: #2a1233;
-  --editor-toolbar-bg: rgba(30, 22, 42, 1.0);
+  --editor-toolbar-bg: rgba(30, 22, 42, 1);
+  --editor-toolbar-bg: rgba(18, 14, 26, 0.6);  /* match your main window */
 }
 
 
@@ -793,4 +794,10 @@ x-vue-echarts text{
 .editor-dialog header.panel-toolbar {
   background-color: var(--editor-toolbar-bg) !important;
   backdrop-filter: none !important;
+}
+
+.v-application .panel.editor-dialog header.panel-toolbar.theme--dark.v-toolbar.v-sheet,
+.v-application .panel.editor-dialog header.panel-toolbar .v-toolbar__content {
+  background-color: var(--editor-toolbar-bg) !important;
+  backdrop-filter: blur(10px) !important;
 }

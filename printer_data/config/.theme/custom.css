@@ -49,8 +49,8 @@
   --editor-toolbar-bg: rgba(30, 22, 42, 1);
   --editor-toolbar-bg: rgba(18, 14, 26, 0.1);  /* match your main window */
 
-  --file-folder: #ff0000;   /* color 1 - folders */
-  --file-config: #000000;   /* color 2 - .cfg / .conf */
+  --file-folder: #00ffff;   /* color 1 - folders */
+  --file-config: #ff0000;   /* color 2 - .cfg / .conf */
   --file-image:  #00ff55;   /* color 3 - images */
   --file-other:  #b100ff;   /* color 4 - everything else */
 }

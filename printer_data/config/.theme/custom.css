@@ -53,6 +53,10 @@
   --file-config: #ff0000;   /* color 2 - .cfg / .conf */
   --file-image:  #00ff55;   /* color 3 - images */
   --file-other:  #b100ff;   /* color 4 - everything else */
+
+  --folder-weight: 700;          /* 400 = normal, 700 = bold */
+  --folder-style: italic;        /* normal = off, italic = on */
+  --folder-decoration: underline; /* none = off, underline = on */
 }
 
 
@@ -832,5 +836,6 @@ x-vue-echarts text{
 /* Folders (detected by the folder icon) */
 .v-data-table tr.file-list-cursor:has(td:nth-child(2) path[d^="M10,4H4"]) > td:nth-child(3) {
   color: var(--file-folder) !important;
-  font-weight: 700 !important;
-}
+  font-weight: var(--folder-weight) !important;
+  font-style: var(--folder-style) !important;
+  text-decoration: var(--folder-decoration) !important;}

@@ -48,6 +48,11 @@
   --editor-gutter-bg: #2a1233;
   --editor-toolbar-bg: rgba(30, 22, 42, 1);
   --editor-toolbar-bg: rgba(18, 14, 26, 0.1);  /* match your main window */
+
+  --file-folder: #ffffff;   /* color 1 - folders */
+  --file-config: #000000;   /* color 2 - .cfg / .conf */
+  --file-image:  #00ff55;   /* color 3 - images */
+  --file-other:  #b100ff;   /* color 4 - everything else */
 }
 
 
@@ -800,4 +805,31 @@ x-vue-echarts text{
 .v-application .panel.editor-dialog header.panel-toolbar .v-toolbar__content {
   background-color: var(--editor-toolbar-bg) !important;
   backdrop-filter: blur(10px) !important;
+}
+
+/* Everything else (default) */
+.v-data-table tr.file-list-cursor > td:nth-child(3) {
+  color: var(--file-other) !important;
+}
+
+/* Images */
+.v-data-table tr.file-list-cursor[data-name$=".png" i]  > td:nth-child(3),
+.v-data-table tr.file-list-cursor[data-name$=".jpg" i]  > td:nth-child(3),
+.v-data-table tr.file-list-cursor[data-name$=".jpeg" i] > td:nth-child(3),
+.v-data-table tr.file-list-cursor[data-name$=".gif" i]  > td:nth-child(3),
+.v-data-table tr.file-list-cursor[data-name$=".bmp" i]  > td:nth-child(3),
+.v-data-table tr.file-list-cursor[data-name$=".webp" i] > td:nth-child(3),
+.v-data-table tr.file-list-cursor[data-name$=".svg" i]  > td:nth-child(3) {
+  color: var(--file-image) !important;
+}
+
+/* .cfg and .conf */
+.v-data-table tr.file-list-cursor[data-name$=".cfg" i]  > td:nth-child(3),
+.v-data-table tr.file-list-cursor[data-name$=".conf" i] > td:nth-child(3) {
+  color: var(--file-config) !important;
+}
+
+/* Folders (detected by the folder icon) */
+.v-data-table tr.file-list-cursor:has(td:nth-child(2) path[d^="M10,4H4"]) > td:nth-child(3) {
+  color: var(--file-folder) !important;
 }

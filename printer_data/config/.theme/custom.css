@@ -46,7 +46,7 @@
 
   --editor-bg: rgba(18, 14, 26, 0.60);   /* raise/lower the last number for opacity */
   --editor-gutter-bg: #2a1233;
-  --editor-toolbar-bg: rgba(30, 22, 42, 1);
+  --editor-toolbar-bg: rgba(30, 22, 42, 0.1);
 }
 
 

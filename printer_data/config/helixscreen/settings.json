@@ -15,7 +15,7 @@
     "gpu_3d_blocked": false,
     "gpu_blur_blocked": false,
     "page_scroll_buttons": false,
-    "screensaver_type": 2,
+    "screensaver_type": 1,
     "sleep_sec": 1200
   },
   "gcode_viewer": {

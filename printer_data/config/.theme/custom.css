@@ -47,7 +47,7 @@
   --file-image: #00ff55; /* color 3 - images */
   --file-other: #b100ff; /* color 4 - everything else */
 
-  --folder-weight: 700; /* 400 = normal, 700 = bold */
+  --folder-weight: 1000; /* 400 = normal, 700 = bold */
   --folder-style: italic; /* normal = off, italic = on */
   --folder-decoration: underline; /* none = off, underline = on */
 

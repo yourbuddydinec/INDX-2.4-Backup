@@ -88,7 +88,8 @@
   "printers": {
     "default": {
       "bed_occupancy": {
-        "last_occupied": "{\"filename\":\"flexi-rex-improved-v3-prusai3mk3_TPU_1h45m.gcode\",\"job_id\":\"000084\",\"object_height\":13.0,\"start_time\":1795626346.2153568}"
+        "last_occupied": "{\"filename\":\"flexi-rex-improved-v3-prusai3mk3_TPU_1h45m.gcode\",\"job_id\":\"000085\",\"object_height\":13.0,\"start_time\":1795629377.473537}",
+        "outlines": "{\"filename\":\"flexi-rex-improved-v3-prusai3mk3_TPU_1h45m.gcode\",\"objects\":[[[117.9,132.8],[118.1,132.3],[132.7,131.9],[181.6,132.1],[234.1,184.4],[218.2,194.8],[194.6,199.6],[165.9,191.4],[118.5,134.4],[117.9,132.8]]]}"
       },
       "default_macros": {
         "cooldown": "SET_HEATER_TEMPERATURE HEATER=extruder TARGET=0\nSET_HEATER_TEMPERATURE HEATER=heater_bed TARGET=0",
@@ -220,20 +221,20 @@
           "filter": {
             "interval_h": 200,
             "notified": false,
-            "used_h": 0.0
+            "used_h": 2.370555555555832
           },
           "nozzle": {
             "interval_h": 500,
             "notified": false,
-            "used_h": 0.0
+            "used_h": 2.370555555555832
           },
           "rails": {
             "interval_h": 300,
             "notified": false,
-            "used_h": 0.0
+            "used_h": 2.370555555555832
           }
         },
-        "total_h": 0.0
+        "total_h": 2.370555555555832
       },
       "moonraker_api_key": false,
       "moonraker_host": "127.0.0.1",
